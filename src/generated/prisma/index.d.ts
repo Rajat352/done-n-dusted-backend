@@ -5864,6 +5864,7 @@ export namespace Prisma {
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    name_userId?: CategoryNameUserIdCompoundUniqueInput
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
@@ -5872,7 +5873,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Category"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     tasks?: TaskListRelationFilter
-  }, "id">
+  }, "id" | "name_userId">
 
   export type CategoryOrderByWithAggregationInput = {
     id?: SortOrder
@@ -6298,6 +6299,11 @@ export namespace Prisma {
     content?: SortOrder
     taskId?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type CategoryNameUserIdCompoundUniqueInput = {
+    name: string
+    userId: string
   }
 
   export type CategoryCountOrderByAggregateInput = {

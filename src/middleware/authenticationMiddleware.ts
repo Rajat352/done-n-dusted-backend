@@ -15,7 +15,7 @@ export const authenticate = (
 
   try {
     const decoded = jwt.verify(token, config.jwt_secret);
-    req.user = decoded;
+    req.user = decoded as JwtPayload;
     next();
   } catch (error) {
     console.error("Couldn't verify token!");

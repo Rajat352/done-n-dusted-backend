@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import taskRouter from "./routes/taskRoute";
 import authRouter from "./routes/authRoute";
+import categoryRouter from "./routes/categoryRoute";
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(cookieParser());
 
 app.use("/tasks", taskRouter);
 app.use("/auth", authRouter);
+app.use("/category", categoryRouter);
 
 export default app;
