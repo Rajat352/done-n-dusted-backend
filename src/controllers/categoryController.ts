@@ -16,11 +16,16 @@ export const getCategories = async (req: Request, res: Response) => {
       where: {
         userId: userData.userId,
       },
+      select: {
+        id: true,
+        name: true,
+      },
     });
 
     res.status(200).json(allCategories);
   } catch (error) {
     console.error("An error occured while getting categories: ", error);
+    res.status(500).json({ error });
   } finally {
     await prisma.$disconnect();
   }

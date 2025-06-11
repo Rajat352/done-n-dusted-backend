@@ -5,8 +5,13 @@ import { csrfProtection } from "../middleware/csrfMiddleware";
 
 const router = Router();
 
-router.get("/", authenticate as RequestHandler, getAllTasks);
+router.get("/:categoryid", authenticate as RequestHandler, getAllTasks);
 
-router.post("/", authenticate as RequestHandler, csrfProtection, createTask);
+router.post(
+  "/:categoryid",
+  authenticate as RequestHandler,
+  csrfProtection,
+  createTask
+);
 
 export default router;

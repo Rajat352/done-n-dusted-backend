@@ -16,7 +16,7 @@ app.use(
 app.use(json());
 app.use(cookieParser());
 
-app.use("/tasks", taskRouter);
+app.use("/task", taskRouter);
 app.use("/auth", authRouter);
 app.use("/category", categoryRouter);
 
